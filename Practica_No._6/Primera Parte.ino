@@ -13,7 +13,7 @@
 #include <LiquidCrystal.h>
 
 LiquidCrystal lcd_1(12, 11, 5, 4, 3, 2);
-char name [5]={'K', 'e', 'v', 'i', 'n'};
+char name [5]={'K', 'E', 'V', 'I', 'N'};
 int posicion [] = {0, 1, 2, 3, 4, 5};
 int carnet [] = {2, 0, 2, 3, 1, 1, 3};
 int po_car [] = {0, 1, 2, 3, 4, 5, 6};
@@ -36,6 +36,6 @@ void loop()
      lcd_1.print(carnet[i]);
      delay(300);
    }
-  lcd_1.clear();
+  //lcd_1.clear();
   delay(500);
 }
