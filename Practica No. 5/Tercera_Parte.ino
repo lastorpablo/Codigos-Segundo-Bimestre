@@ -28,7 +28,11 @@ int num9 [5] = {2, 3, 4, 7, 8};
 void setup()
 {
   Serial.begin(9600);
-  //digitalWrite(10, HIGH);
+  digitalWrite(10, HIGH);
+}
+
+void loop()
+{
   varnum9();
   delay(time3);
   varnum8();
@@ -49,11 +53,6 @@ void setup()
   delay(time3);
   varnum0();
   buzzer();
-}
-
-void loop()
-{
-  
 }
 
 
@@ -163,10 +162,10 @@ int varnum9(){
 }
 
 int buzzer(){
-  //digitalWrite(10, LOW);
+  digitalWrite(10, LOW);
+  delay(50);
   tone(9, 400);
   delay(500);
   noTone(9);
   delay(2000);
-
 }
