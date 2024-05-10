@@ -1,3 +1,15 @@
+/* 
+    Fundación Kinal
+    Centro educativo Técncico Laboral Kinal
+    Quinto Perito
+    Quinto Electrónica 
+    Codigo Técnico: EB5AM
+    Curso: Taller de Electrónica Digital y reparación de computadoras
+    Proyecto: Interfaces de visualización e Interacción
+    Dev: Kevin Owen Roger Pablo Lastor
+    Fecha: 09 de mayo de 2024
+*/
+
 #include <LiquidCrystal.h>
 
 LiquidCrystal lcd_1(12, 11, 5, 4, 3, 2);
