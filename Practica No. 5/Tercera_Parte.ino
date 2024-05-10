@@ -29,6 +29,7 @@ void setup()
 {
   Serial.begin(9600);
   digitalWrite(10, HIGH);
+  configuracion();
 }
 
 void loop()
