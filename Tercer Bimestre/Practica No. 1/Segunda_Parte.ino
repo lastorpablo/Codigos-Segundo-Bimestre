@@ -65,25 +65,69 @@ void setup()
   lcd.setCursor(0,0);
   lcd.print("Contador de rev.");
   lcd.setCursor(0,1);
-  lcd.print("No. De Rev = ");
+  lcd.print("No. De RPM = ");
   attachInterrupt(digitalPinToInterrupt(sensor_hall), contrev, FALLING);
 }
   
 void loop()
 { 
   state_sensor_2 = digitalRead(sensor_IR);
-  
+
   currentTime = millis();
+  Serial.println(Speed);
   if (currentTime - lastTime >= 2000) {
+
+  if(Speed == 1){
+    rpm = (rev / 8.2) * 60.0;
+    }
+
+  else if(Speed == 2){
+    rpm = (rev / 12.6) * 60.0;
+    }
+    
+  else if(Speed == 3){
+    rpm = (rev / 16.8) * 60.0;
+    }
+    
+  else if(Speed == 4){
+    rpm = (rev / 20.6) * 60.0;
+    }
+    
+  else if(Speed == 5){
+    rpm = (rev / 24.7) * 60.0;
+    }
+
+  else if(Speed == 6){
+    rpm = (rev / 28.7) * 60.0;
+    }
+
+  else if(Speed == 7){
+    rpm = (rev / 32.7) * 60.0;
+    }
+
+  else if(Speed == 8){
+    rpm = (rev / 37.3) * 60.0;
+    }
+
+  else if(Speed == 9){
+    rpm = (rev / 40.9) * 60.0;
+    }
+    
+  else if(Speed == 10){
+    rpm = (rev / 43.7) * 60.0;
+    }       
+     
     rev = 0;
+    //rpm = 0;
     lastTime = currentTime; 
   }
   
-  lcd.setCursor(14,1);
-  lcd.print(rev);
+  lcd.setCursor(13,1);
+  lcd.print(rpm);
   
   if(state_sensor_2 == LOW)
   { 
+    
     valSpeed = analogRead(canalADC);    
     Speed = map(valSpeed,0,1023,1,10);
     Serial.println(Speed);
@@ -102,4 +146,5 @@ void loop()
 void contrev()
 {
   rev++;
+  
 }
