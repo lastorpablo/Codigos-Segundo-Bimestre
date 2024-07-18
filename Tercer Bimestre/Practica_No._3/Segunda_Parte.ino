@@ -34,13 +34,7 @@ void setup() {
   Serial.println("Favor de revisar conexiones o alimentacion");
   while(1);   //Ciclo infinito
  }
-  
-  waza.clearDisplay();
-  waza.setTextSize(2);
-  waza.setTextColor(SSD1306_WHITE);
-  waza.setCursor(0,0);
-  waza.println("Valor del ADC");
-  waza.display();
+ waza.clearDisplay();
 }
 
 void loop() {
