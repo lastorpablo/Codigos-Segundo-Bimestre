@@ -46,6 +46,7 @@ byte PacMan_Eat[8]={
 
 void setup() {
   Serial.begin(9600);
+  pinMode(Canal_ADC, INPUT);
   PacMan.shutdown(0, false);
   PacMan.setIntensity(0,15);
   PacMan.clearDisplay(0);
