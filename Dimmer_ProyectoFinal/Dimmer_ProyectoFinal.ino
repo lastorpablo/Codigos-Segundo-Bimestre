@@ -10,8 +10,7 @@ volatile boolean cruce_cero = 0;
 int Triac = 3; ;
 int T_int=100;
 int dim;
-String cadena;
-long valor;
+
 void setup() {
   BT.begin(9600);
   Serial.begin(9600);
@@ -44,8 +43,8 @@ if (cruce_cero == true ){
 
 void loop() {
 if(BT.available() > 0){
-        int servopos = BT.read();
-        dim = map(servopos,0,100,83,0);
+        int lectura = BT.read();
+        dim = map(lectura,0,100,83,0);
     }
  
     if(BT.available() > 0){
